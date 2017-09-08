@@ -10,16 +10,21 @@ example values (from https://en.wikipedia.org/wiki/HTML5_Audio):
 <button onclick="pause()">Pause</button>
 <button onclick="stopAndAlert()">Stop all</button>
 <script>
+/*
+* Audio player by nagayev
+* thanks to kachkaev
+* License - MIT
+*/
 var audio = new Audio();
 
 function play(){
-  //получаем input field
+  //get input field
   var audioInput = document.getElementById('audio');
 
-  //получаем значение с формы
+  //get value from form
   var url = audioInput.value;
 
-  //создаем аудио объект if needed
+  //new audio object if needed
   if (audio.src !== url) {
     stop();
     audio.src = url;
@@ -39,7 +44,7 @@ function stop(){
 
 function stopAndAlert() {
   stop();
-  window.open('alpha.html');
-  alert('Остановлено!');
+  location.reload();
+  alert('Stopped!');
 }
 </script>
